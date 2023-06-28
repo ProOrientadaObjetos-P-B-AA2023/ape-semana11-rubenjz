@@ -1,16 +1,24 @@
 package juego;
 
-public class Guerrero extends Character implements IAtaqueGuerrero{
+public class Guerrero implements Character{
+    private int puntosDeVida;
     
     public Guerrero() {
     }
 
-    public int getPuntosDeVida() {
-        return puntosDeVida;
+    public Guerrero(int puntosDeVida) {
+        this.puntosDeVida = puntosDeVida;
     }
 
+
+    @Override
+    public int getPuntosDeVida() {
+        return this.puntosDeVida;
+    }
+
+    @Override
     public void setPuntosDeVida(int puntosDeVida) {
-        this.puntosDeVida = this.puntosDeVida;
+        this.puntosDeVida = puntosDeVida;
     }
 
     @Override
@@ -26,29 +34,29 @@ public class Guerrero extends Character implements IAtaqueGuerrero{
     }
 
     @Override
-    public void atacarFiloDoble() {
-        System.out.println("Guerro ataco con FiloDoble!");
-    }
-
-    @Override
-    public void atacarFuriaEspada() {
-        System.out.println("Guerro ataco con FuriaEspada!");
-    }
-
-    @Override
-    public void atacarDesespero() {
-        System.out.println("Guerro ataco con Desespero!");
-    }
-
-    @Override
     public void mostrarAtaques() {
-        System.out.println("|--------------------|");
-        System.out.println("| Ataque       |Daño |");
-        System.out.println("|--------------------|");
-        System.out.println("| FiloDoble    | 15  |");
-        System.out.println("| FuriaEspada  | 30  |");
-        System.out.println("| Desespero    | 50  |");
-        System.out.println("|--------------------|\n");
+        System.out.println("|---------------------------------|");
+        System.out.println("| Ataque                    |Daño |");
+        System.out.println("|---------------------------------|");
+        System.out.println("| 1) FiloDoble              | 15  |");
+        System.out.println("| 2) Desespero(pierde 10ps) | 50  |");
+        System.out.println("|---------------------------------|\n");
+    }
+
+    @Override
+    public void mostrarPs() {
+        System.out.println("Guerrero le quedan " + this.puntosDeVida +" ps");
+    }
+
+    @Override
+    public int atacar(int opataque) {
+        if (opataque == 1) {
+            System.out.println("Guerro ataco con FiloDoble!");
+            return 15;
+        } else {
+            System.out.println("Guerro ataco con Desespero!");
+            return 50;
+        }
     }
 
 }

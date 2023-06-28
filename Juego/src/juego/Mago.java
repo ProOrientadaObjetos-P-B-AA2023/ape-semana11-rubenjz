@@ -1,21 +1,28 @@
 package juego;
 
-public class Mago extends Character implements IAtaqueMago{
+public class Mago implements Character{
+    private int puntosDeVida;
 
     public Mago() {
     }
 
+    public Mago(int puntosDeVida) {
+        this.puntosDeVida = puntosDeVida;
+    }
+
+    @Override
     public int getPuntosDeVida() {
         return puntosDeVida;
     }
 
+    @Override
     public void setPuntosDeVida(int puntosDeVida) {
         this.puntosDeVida = puntosDeVida;
     }
 
     @Override
     public void recibirDanio(int cantidad) {
-        System.out.println("Guerro Mago " + cantidad + " de daño!");
+        System.out.println("Mago recibio " + cantidad + " de daño!");
         this.puntosDeVida = this.puntosDeVida - cantidad;
     }
 
@@ -26,34 +33,29 @@ public class Mago extends Character implements IAtaqueMago{
     }
 
     @Override
-    public void atacarGelido() {
-        System.out.println("Mago ataco con Gelido!");
-        this.ataque = 60;
-    }
-
-    @Override
-    public void atacarEscudoCura() {
-        System.out.println("Mago ataco con Escudo cura!");
-        System.out.println("Mago recupero 10 puntos de vida!");
-        this.ataque = 20;
-        this.puntosDeVida = this.puntosDeVida + 10;
-    }
-
-    @Override
-    public void atacarMagiaMugui() {
-        System.out.println("Mago ataco con MagiaMugui!");
-        this.ataque = 80;
-    }
-
-    @Override
     public void mostrarAtaques() {
-        System.out.println("|-----------------------------------|");
-        System.out.println("| Ataque                      |Daño |");
-        System.out.println("|-----------------------------------|");
-        System.out.println("| Gelido                      | 60  |");
-        System.out.println("| Escudo cura(recupera 10ps)  | 20  |");
-        System.out.println("| MagiaMugui                  | 50  |");
-        System.out.println("|-----------------------------------|\n");
+        System.out.println("|-------------------------------------|");
+        System.out.println("| Ataque                        |Daño |");
+        System.out.println("|-------------------------------------|");
+        System.out.println("| 1) Escudo cura(recupera 10ps) | 20  |");
+        System.out.println("| 2) MagiaMugui                 | 50  |");
+        System.out.println("|-------------------------------------|\n");
+    }
+
+    @Override
+    public void mostrarPs() {
+        System.out.println("Mago le quedan " + this.puntosDeVida +" ps");
+    }
+
+    @Override
+    public int atacar(int opataque) {
+        if (opataque == 1) {
+            System.out.println("Mago ataco con Escudo cura!");
+            return 20;
+        } else {
+            System.out.println("Mago ataco con MagiaMugui!");
+            return 50;
+        }
     }
     
 }

@@ -1,12 +1,18 @@
 package juego;
 
-public abstract class Character {
+public interface Character {
     
-    protected int puntosDeVida;
-    protected int experiencia;
-    protected int nivel;
+    public int getPuntosDeVida();
     
-    public abstract void recibirDanio(int cantidad);
+    public void setPuntosDeVida(int puntosDeVida);
     
-    public abstract void recuperarSalud(int cantidad);
+    public void recibirDanio(int cantidad);
+    
+    public void recuperarSalud(int cantidad);
+    
+    public int atacar(int opataque);
+    
+    public void mostrarAtaques();
+    
+    public void mostrarPs();
 }
