@@ -8,6 +8,7 @@ public class MenudelDia extends Menu {
         super(nombrePlato, valorInicialMenu);
         this.valorPostre = valorPostre;
         this.valorBebida = valorBebida;
+        calcularValorMenu();
     }
 
     @Override

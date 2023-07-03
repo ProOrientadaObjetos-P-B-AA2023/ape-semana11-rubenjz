@@ -17,15 +17,7 @@ public abstract class Menu {
     public void setNombrePlato(String nombrePlato) {
         this.nombrePlato = nombrePlato;
     }
-
-    public double getValorMenu() {
-        return valorMenu;
-    }
-
-    public void calcularValorMenu() {
-        this.valorMenu = this.valorInicialMenu + calcularExtra();
-    }
-
+    
     public double getValorInicialMenu() {
         return valorInicialMenu;
     }
@@ -34,9 +26,14 @@ public abstract class Menu {
         this.valorInicialMenu = valorInicialMenu;
     }
 
-    public void setValorMenu(double valorMenu) {
-        this.valorMenu = valorMenu;
+    public double getValorMenu() {
+        return valorMenu;
     }
+
+    public void calcularValorMenu() {
+        this.valorMenu = this.valorInicialMenu + calcularExtra();
+    }
+    
     
     public abstract double calcularExtra();
 

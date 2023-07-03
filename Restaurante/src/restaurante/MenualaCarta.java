@@ -10,6 +10,7 @@ public class MenualaCarta extends Menu {
         this.valorPGuarnición = valorPGuarnición;
         this.valorBebida = valorBebida;
         this.valorAdicional = valorAdicional;
+        calcularValorMenu();
     }
     
     @Override

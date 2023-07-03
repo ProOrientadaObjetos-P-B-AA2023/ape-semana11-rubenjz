@@ -6,6 +6,7 @@ public class MenuEconomico extends Menu{
     public MenuEconomico(double descuento, String nombrePlato, double valorInicialMenu) {
         super(nombrePlato, valorInicialMenu);
         this.descuento = descuento;
+        calcularValorMenu();
     }
     
     @Override

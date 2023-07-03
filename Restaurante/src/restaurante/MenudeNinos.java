@@ -8,6 +8,7 @@ public class MenudeNinos extends Menu{
         super(nombrePlato, valorInicialMenu);
         this.valorPHelado = valorPHelado;
         this.valorPastel = valorPastel;
+        calcularValorMenu();
     }
     
     @Override
@@ -15,14 +16,14 @@ public class MenudeNinos extends Menu{
         double extra = this.valorPHelado + this.valorPastel;
         return extra;
     }
-
+    
     @Override
     public String toString() {
         return "\nMenu a la Niños: " +
                 super.toString() +
                 "\nValor helado: " + valorPHelado +
                 "\nValor pastel: " + valorPastel +
-                "\nValor del Menú: " + valorMenu;
+                "\nValor del Menú: " + this.valorMenu;
     }
     
 }
